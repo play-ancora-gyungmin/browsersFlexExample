@@ -1,0 +1,456 @@
+@charset "utf-8";
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: "SF Pro Display", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.hid {
+    display: none;
+}
+
+.cover {
+    position: absolute;
+    left: 0px;
+    /*300px*/
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    display: none;
+}
+
+.intro-block {
+    position: absolute;
+    left: 0px;
+    /*300px*/
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+
+#close {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    display: none;
+}
+
+#top {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    text-align: center;
+    background: hsla(0, 0%, 100%, 0.1);
+    z-index: 99;
+}
+
+#hamburger {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 70px;
+    height: 70px;
+    font-size: 42px;
+    line-height: 63px;
+    color: #fff;
+    text-decoration: none;
+}
+
+#top > h1 {
+    padding-top: 20px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+#top > h1 > span {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    /*0*/
+    width: 300px;
+    height: 100%;
+    z-index: 999;
+}
+
+#menu > ul {
+    width: 100%;
+    height: 100%;
+    background-color: #f2b635;
+}
+
+#menu > ul > li {
+    position: relative;
+    left: -100%;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    font-weight: bold;
+    color: #fff
+}
+
+#menu > ul > li:nth-child(1),
+#menu > ul > li:nth-child(7) {
+    height: 7.5%;
+}
+
+#menu > ul > li:nth-child(8) {
+    height: 10%;
+}
+
+#menu > ul > li > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+    color: #fff
+}
+
+#menu > ul > li > a > span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#menu > ul > li.on::after {
+    position: absolute;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#menu > ul > li:nth-child(1) > a {
+    background-color: #4F4F4F;
+}
+
+#menu > ul > li:nth-child(2) > a {
+    background-color: #6F6F6F;
+}
+
+#menu > ul > li:nth-child(2).on > a {
+    background-color: #f2b635;
+}
+
+#menu > ul > li:nth-child(3) > a {
+    background-color: #646464;
+}
+
+#menu > ul > li:nth-child(4) > a {
+    background-color: #5E5E5E;
+}
+
+#menu > ul > li:nth-child(5) > a {
+    background-color: #595959;
+}
+
+#menu > ul > li:nth-child(6) > a {
+    background-color: #545454;
+}
+
+#menu > ul > li:nth-child(7) > a {
+    background-color: #4f4f4f;
+}
+
+#menu > ul > li:nth-child(8) > a {
+    background-color: #4a4a4a;
+}
+
+#menu > ul > li:nth-child(9) > a {
+    background-color: #6F6F6F;
+}
+
+#menu > ul > li > a:hover {
+    background-color: hsl(0, 0%, 25%);
+}
+
+
+#wrap {
+    position: relative;
+    left: 0;
+    /*300px*/
+    width: 100%;
+    height: 100%;
+}
+
+#wrap > ul {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.browsers {
+    flex: 1;
+    transition: .5s ease-in-out;
+    overflow: hidden;
+}
+
+.browsers:hover {
+    flex: 2.25;
+    background-image: radial-gradient(circle, hsla(0, 0%, 100%, 0.5) 5%, hsla(0, 0%, 100%, 0) 40%);
+}
+
+
+#chrome {
+    background-color: #f2b635;
+}
+
+#firefox {
+    background-color: #f19a2a;
+}
+
+#edge {
+    background-color: #00caff;
+}
+
+#safari {
+    background-color: #00a0e6;
+}
+
+#opera {
+    background-color: #f25648;
+}
+
+.contents {
+    position: relative;
+    top: 15%;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+}
+
+.contents > li {
+    text-align: center;
+    color: #fff;
+}
+
+/*People Using*/
+.contents > li:nth-child(1) {
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+/*beta*/
+.browsers:hover .contents > li:nth-child(1) {
+    opacity: 1;
+}
+
+.contents > li:nth-child(1) > h2 {
+    font-size: 58px;
+    font-weight: bold;
+}
+
+.contents > li:nth-child(1) > h4 {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/*Logo*/
+.contents > li:nth-child(2) {
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+}
+
+.logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 70px;
+    background-image: url(../images/OB/browsers-bg-edge.png);
+    background-repeat: no-repeat;
+    background-size: auto 200px;
+}
+
+#chrome-logo {
+    background-position: 0 0;
+}
+
+#chrome:hover #chrome-logo {
+    background-position: 0 -100px;
+}
+
+#firefox-logo {
+    background-image: url(../images/OB/browsers-bg.png);
+    background-position: -100px 0;
+}
+
+#firefox:hover #firefox-logo {
+    background-position: -100px -100px;
+}
+
+#edge-logo {
+    background-position: -200px 0;
+}
+
+#edge:hover #edge-logo {
+    background-position: -200px -100px;
+}
+
+#safari-logo {
+    background-position: -300px 0;
+}
+
+#safari:hover #safari-logo {
+    background-position: -300px -100px;
+}
+
+#opera-logo {
+    background-position: -400px 0;
+}
+
+#opera:hover #opera-logo {
+    background-position: -400px -100px;
+}
+
+.contents > li:nth-child(2) > h4 {
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/*Button*/
+.contents > li:nth-child(3) {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: .5s ease-in-out;
+}
+
+/*beta*/
+.browsers:hover .contents > li:nth-child(3) {
+    opacity: 1;
+}
+
+.downloads {
+    min-width: 210px;
+    height: 57px;
+    border: 3px solid #fff;
+    border-radius: 30px;
+    color: #fff;
+    background-color: transparent;
+    font: bold 15px/15px "SF Pro Display";
+    cursor: pointer;
+    margin-top: 60px;
+    padding: 0 30px;
+    white-space: nowrap;
+}
+
+.downloads:hover {
+    background-color: #fff;
+}
+
+#chrome-btn:hover {
+    color: #f2b635;
+}
+
+#firefox-btn:hover {
+    color: #f19a2a;
+}
+
+#edge-btn:hover {
+    color: #00caff;
+}
+
+#safari-btn:hover {
+    color: #00a0e6;
+}
+
+#opera-btn:hover {
+    color: #f25648;
+}
+
+.contents > li:nth-child(3) > h5 {
+    font-size: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.contents > li:nth-child(3) > span {
+    font-size: 10px;
+    font-weight: bold;
+    line-height: 3px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/*Availables*/
+.contents > li:nth-child(4) {
+    position: absolute;
+    left: 50%;
+    bottom: 30px;
+    transform: translateX(-50%);
+}
+
+.contents > li:nth-child(4) > h5 {
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.availables {
+    display: flex;
+    justify-content: center;
+    width: 135px;
+    margin: 10px auto;
+}
+
+.availables li {
+    width: 25px;
+    height: 25px;
+    margin: 0 10px;
+    background-image: url(../images/OB/operatingsystems-bg.png);
+    background-repeat: no-repeat;
+    background-size: auto 25px;
+}
+
+.win {
+    background-position: 0 0;
+}
+
+.mac {
+    background-position: -25px 0;
+}
+
+.lix {
+    background-position: -50px 0;
+}
+
